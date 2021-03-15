@@ -1,9 +1,15 @@
+#include"holberton.h"
+#include<stdio.h>
+#include<stdarg.h>
+#include<unistd.h>
+#include<stdlib.h>
+
+
 int _printf(const char *format, ...)
 {
-  va_list valist;
+  va_list list;
   unsigned int i = 0, j = 0;
-
-  va_start(valist, format);
+  va_start(list, format);
 
   if (!format || (format[0] == '%' && format[1] == '\0'))
     return (-1);
@@ -19,7 +25,7 @@ int _printf(const char *format, ...)
 	    }
 	  else if (_typefor(format, i + 1) != NULL)
 	    {
-	      j += _typefor(format, i + 1)(valist);
+	      j += _typefor(format, i + 1)(list);
 	      i++;
 	    }
 	  else
@@ -34,6 +40,6 @@ int _printf(const char *format, ...)
 	  j++;
 	}
     }
-  va_end(valist);
+  va_end(list);
   return (j);
 }
