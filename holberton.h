@@ -1,10 +1,10 @@
 #ifndef _HOLBERTON_H
 #define _HOLBERTON_H
-#include<string.h>
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include<unistd.h>
+#include <unistd.h>
 
 /**
  * struct s_type- structure 
@@ -18,16 +18,14 @@ typedef struct s_type
 } s_type;
 
 
-
-
 int _putchar(char c);
-int _printf(const char *format, ...)
+int _printf(const char *format, ...);
 int(*_typefor(const char *argu, int argb))(va_list);
-int p_char(va_list valist);
-int p_string(va_list valist);
-int p_int(va_list valist);
+int p_char(va_list list);
+int p_string(va_list list);
+int p_int(va_list list);
 int count_num(unsigned int n);
 int p_rot13(char *s);
-int print_R(va_list valist);
-int p_binary(va_list valist)
+int print_R(va_list list);
+int p_binary(va_list list);
 #endif
