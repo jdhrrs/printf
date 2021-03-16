@@ -18,15 +18,15 @@ typedef struct s_type
 	int (*func)(va_list);
 } s_type;
 
-int (*_typefor(const char *argu, int argb))(va_list);
 int _putchar(char c);
-int (*func)(va_list);
 int _printf(const char *format, ...);
-int p_string(va_list valist);
-int p_int(va_list valist);
+int(*_typefor(const char *argu, int argb))(va_list);
+int p_char(va_list list);
+int p_string(va_list list);
+int p_int(va_list list);
 int count_num(unsigned int n);
 int p_rot13(char *s);
-int print_R(va_list valist);
-int p_binary(va_list valist);
+int print_R(va_list list);
+int p_binary(va_list list);
 
 #endif
