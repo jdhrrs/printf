@@ -65,22 +65,27 @@ int count_num(unsigned int n)
   return (0);
 }
 
-int p_rot13(char *s)
+int p_rot13(char *a)
 {
-  int j, k, count = 0;
-  char g[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  char h[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+  int count = 0;
+  int x = 0;
+  int s = 0;
+  char z[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  char b[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-  for (j = 0; s[j] != '\0'; j++)
+  for (x = 0; a[x] != '\0'; x++)
     {
-      if (s[j] == g[k])
+      for (s = 0; z[s] != '\0'; s++)
 	{
-	  count += _putchar(h[k]);
-	  break;
+	  if (a[x] == z[s])
+	    {
+	      count += _putchar(b[s]);
+	      break;
+	    }
 	}
       if (s > 51)
 	{
-	  count += _putchar(s[j]);
+	  count += _putchar(a[x]);
 	}
     }
   return (count);
